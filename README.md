@@ -10,6 +10,200 @@ curl -fsSL https://ollama.com/install.sh | sh
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+<br><br>
+___
+<br><br>
+<br><br>
+
+
+
+## CLI Reference
+
+<details><summary>Click to expand..</summary>
+
+### Create a model
+
+`ollama create` is used to create a model from a Modelfile.
+
+```
+ollama create mymodel -f ./Modelfile
+```
+
+### Pull a model
+
+```
+ollama pull llama3.2
+```
+
+> This command can also be used to update a local model. Only the diff will be pulled.
+
+### Remove a model
+
+```
+ollama rm llama3.2
+```
+
+### Copy a model
+
+```
+ollama cp llama3.2 my-model
+```
+
+### Multiline input
+
+For multiline input, you can wrap text with `"""`:
+
+```
+>>> """Hello,
+... world!
+... """
+I'm a basic program that prints the famous "Hello, world!" message to the console.
+```
+
+### Multimodal models
+
+```
+ollama run llava "What's in this image? /Users/jmorgan/Desktop/smile.png"
+The image features a yellow smiley face, which is likely the central focus of the picture.
+```
+
+### Pass the prompt as an argument
+
+```
+$ ollama run llama3.2 "Summarize this file: $(cat README.md)"
+ Ollama is a lightweight, extensible framework for building and running language models on the local machine. It provides a simple API for creating, running, and managing models, as well as a library of pre-built models that can be easily used in a variety of applications.
+```
+
+### Show model information
+
+```
+ollama show llama3.2
+```
+
+### List models on your computer
+
+```
+ollama list
+```
+
+### List which models are currently loaded
+
+```
+ollama ps
+```
+
+### Stop a model which is currently running
+
+```
+ollama stop llama3.2
+```
+
+### Start Ollama
+
+`ollama serve` is used when you want to start ollama without running the desktop application.
+
+## Building
+
+See the [developer guide](https://github.com/ollama/ollama/blob/main/docs/development.md)
+
+### Running local builds
+
+Next, start the server:
+
+```
+./ollama serve
+```
+
+Finally, in a separate shell, run a model:
+
+```
+./ollama run llama3.2
+```
+
+## REST API
+
+Ollama has a REST API for running and managing models.
+
+### Generate a response
+
+```
+curl http://localhost:11434/api/generate -d '{
+  "model": "llama3.2",
+  "prompt":"Why is the sky blue?"
+}'
+```
+
+### Chat with a model
+
+```
+curl http://localhost:11434/api/chat -d '{
+  "model": "llama3.2",
+  "messages": [
+    { "role": "user", "content": "why is the sky blue?" }
+  ]
+}'
+```
+
+See the [API documentation](./docs/api.md) for all endpoints.
+
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <br><br>
 <br><br>
 ___
