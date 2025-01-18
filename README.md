@@ -602,7 +602,7 @@ ___
 
 <br><br>
 
-## https://github.com/ollama/ollama?tab=readme-ov-file#import-from-gguf
+## Import from gguf
 
 Create Modelfile:
 ```
@@ -618,6 +618,7 @@ Then run:
 ```shell
 ollama run deepseek-v2-coder-lite
 ```
+- For more sulotions please check below at `Importing a model`
 
 
 
