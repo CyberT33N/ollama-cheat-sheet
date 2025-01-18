@@ -34,7 +34,7 @@ ___
 <details><summary>Click to expand..</summary>
 
 
-## Generate a response
+# Generate a response
 
 ```
 curl http://localhost:11434/api/generate -d '{
@@ -43,7 +43,9 @@ curl http://localhost:11434/api/generate -d '{
 }'
 ```
 
-## Chat with a model
+<br><br>
+
+# Chat with a model
 
 ```
 curl http://localhost:11434/api/chat -d '{
@@ -53,6 +55,52 @@ curl http://localhost:11434/api/chat -d '{
   ]
 }'
 ```
+
+
+
+<br><br>
+
+# OpenAI compatibility
+- https://github.com/ollama/ollama/blob/main/docs/openai.md
+- https://ollama.com/blog/openai-compatibility
+- Ollama now has built-in compatibility with the OpenAI Chat Completions API, making it possible to use more tooling and applications with Ollama locally.
+
+curl example
+```shell
+curl http://localhost:11434/v1/chat/completions \
+    -H "Content-Type: application/json" \
+    -d '{
+        "model": "llama2",
+        "messages": [
+            {
+                "role": "system",
+                "content": "You are a helpful assistant."
+            },
+            {
+                "role": "user",
+                "content": "Hello!"
+            }
+        ]
+    }'
+```
+
+javascript example:
+```javascript
+import OpenAI from 'openai'
+
+const openai = new OpenAI({
+  baseURL: 'http://localhost:11434/v1',
+  apiKey: 'ollama', // required but unused
+})
+
+const completion = await openai.chat.completions.create({
+  model: 'llama2',
+  messages: [{ role: 'user', content: 'Why is the sky blue?' }],
+})
+
+console.log(completion.choices[0].message.content)
+```
+
 
 
 </details>
