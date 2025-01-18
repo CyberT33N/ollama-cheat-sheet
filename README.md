@@ -896,6 +896,8 @@ ___
 
 # FAQ
 
+<details><summary>Click to expand..</summary>
+
 ## How can I upgrade Ollama?
 
 Ollama on macOS and Windows will automatically download updates. Click on the taskbar or menubar item and then click "Restart to update" to apply the update. Updates can also be installed by downloading the latest version [manually](https://ollama.com/download/).
@@ -1207,5 +1209,5 @@ How much the cache quantization impacts the model's response quality will depend
 
 You may need to experiment with different quantization types to find the best balance between memory usage and quality.
 
-
+</details>
 
