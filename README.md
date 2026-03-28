@@ -9,6 +9,18 @@ curl -fsSL https://ollama.com/install.sh | sh
 ```
 
 
+## Windows
+
+### Powershell
+```shell
+irm https://ollama.com/install.ps1 | iex
+```
+
+
+
+
+
+
 
 
 
